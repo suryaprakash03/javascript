@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script type="module">
+      //import fun from "./module.js";  //default
+      import {default as fun,c,n} from "./module.js"; //multiple import //if you want to get the default one in the single line import use default as.
+      fun();
+      c();
+      console.log(n);
+      //import pani export pana.export{} from "filepath"
+      //dynamic import pana use import('filepath') function
+    </script>
+</head>
+<body>
+    <h1 id="heading">learning javascript</h1>
+    <ul>
+        <li>one</li>
+        <li class="underline">two</li>
+        <script>let ql=document.querySelectorAll(".underline").length;
+                console.log(ql+"it gives only the before finding length this called live searching");</script>
+        <li class="underline">three</li>
+    </ul>
+    <h1>Age Calculator</h1>
+    <label>Enter age:</label>
+    <input type="date" id="date">
+    <input type="text">
+    <button onclick="cal()">calculate</button>
+    
+    <p id="p">this is paragraph tag</p> <!--this p tag further changed to div using outerhtml-->
+    <a href="www.google.com" target="_blank" onclick="change()">google</a>
+    <div id="dynamicins" onclick="display()">click here </div>
+    <p>
+        <label>
+            file select:
+        </label>
+        <input type="file" value="choosefile">
+    </p>
+    <!-- <script src="jsfds-1.js"></script>  -->
+    <!-- <script src="obj-2.js"></script> -->
+    <!-- <script src="datatypes-3.js"></script> -->
+    <!-- <script src="advancedfunc-4.js"></script> -->
+    <!-- <script src="objprop-5.js"></script> -->
+    <!-- <script src="class-6.js"></script> -->
+    <!-- <script src ="promise-7.js"></script> -->
+    <script src="./dom/dom.js"></script>
+    <!-- <script src="binarydata.js"></script> -->
+    <script src="./main.js"></script>
+</body>
+</html>

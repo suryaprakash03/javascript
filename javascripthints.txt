@@ -1,0 +1,148 @@
+comments on javascript as same like c and css
+/* inside giving another comment raises an error */,//
+
+variable name can start with $,_,alphabets.should only contains underscore,number,$ not any other special character.
+8 data types undefined,null,string,number,boolean,object,array,bigint used for huge number ends with n
+declaring variable --> var a = 10 or var a = "surya prakash".
+it is a dynamically typed language so you need not to define the datatype.a same variable can hold different datatype.it executes line by line and it is case sensitive too.
+with the 3 keyword you can declare variable
+var,let,const
+the difference between the var and let is that let cannot be redeclared.it has a block scope.block scope means that a variable inside the function has only its lifetime till the function alives
+var a=5                        let a=5                         const makes the value constant
+function surya()               function surya()
+{                              {
+  var a=3                         let a=3
+} the value of a is 3          } the value of a is still 5
+** var always point            ** let inside block does not change the global value
+   to the global scope                                                                       
+
+javascript can be written under the script tag.the script tag can be placed in the head or body section.placing in the body section reduces the loading time.the page appears faster.
+<script src="">js code here raises an error without src attribute it executes crt</script>
+you can link the external stylesheets with the src attribute <script src="psp.js">
+
+objects are name value pairs in javascript
+the property must have any name contains special character,number also finally it converts it to a string.if a property has two words seperated by a space use double quotes.
+**two** types object declare
+//type 1
+const s=new Object();
+s.year=2001;
+s[year]=2001; for accessing also you can use the both the methods . and []
+           
+//type 2(object literal)
+let key = "rollno";
+var n={
+        "@year":1996,
+         $name:namu,
+         rollno:159,        ---> n[key] for accessing
+       };
+console.log(n["@year"]); // array index method does not obey the variable rules it just a string for calling the objects.it starts with @ sign not $ or _. key it also holds the variable name but the variabe name is equal to the property name in the object definition.
+console.log(n.$name); // dot method obeys the variable rules.
+*using the for in loop to loop through the objects.
+*if the propertyname 3,2,1 it will display in the sorted order not the creation order so we change the 3 --> .3 to treat it as a string.
+*use the in operater to check the property is defined inside the object if(rollno in n) // true.
+
+function in javascript is also an object itself we can define property to them.you can store a function in a variable and also return it.
+function x()
+ {
+   var a=function ()
+    {
+      console.log("*");
+    };
+   return a;
+ }
+var b=x();
+b();
+
+call by value->primitive value      call by reference-> address base pani value change c++ object
+var a=5;                            var x={
+                                           a:5
+                                         }:
+var b=a;                            var y=x; y hold the address of x object
+b=3;                                y.a=4;
+(a value does not change)           console.log(x.a) // 4 it affects the base value
+
+
+javascript and vanila javascript are same.The ecma script is the set of rules to improve the javascript it acts like a blueprint.
+With the help of console window itself we can change the js file variable,functions definition and we can run function of that file.that wont change the original file.in browser it takes the change.
+placing the js file after the body tag is important for loading the page quickly.if you place it in the head tag it does not known which html elements need to be rendered.
+
+javascript support modules for imports and exports.it raises an error.
+the object in js is important.object has a key value pair.
+const obj={
+key:"value",
+key:function surya();
+};                const restricts the obj="" to redeclare to string;
+this is a keyword refers to the particular object.
+
+in javascript the class is a blueprint of object. a class contains the constructor function as the assigning method for that class properties.the class reduces the multiple declaration of the same object repeatly.
+for connecting the html with js properties.template literal is used `${js.property}` inside the js file.
+
+innerHTML ==> changes the html element from p to h1,innertext ==> changes the text content itself always stores document.getElementById("demo"); address only or else .innerHTML refers to the string not that element.
+                         class                                                         objects
+creation     class car                                                                      const obj={
+             {                                                                                      name:"surya"
+               constructor(name){//to define and set the property this.name=name}                   fun:function(){}       
+               function show(){possible};                                                           function names are not needed
+             }                                                                                      }
+access       const a=new car(); a.name;                                                            obj.name some builtin objects are also used such as date
+                                                                                                   const date=new date()
+
+
+DOM Manipulation
+queryselector(selects the first match) obeys the css selector rules and queryselectorAll selects the query in a nodelist manner.
+document.queryselector().className  ===> gives the name of the class as a string.
+document.queryselector().classList  ===> gives the all class name in a array list where you can add,remove the class,by using functions like add,remove,toggle.
+a single element can contain many class style using the class list you can control the class names.
+append to add after that element,prepend to add before the element.appendchild to add it as a child element,insertbefore(element,position in terms of node),insertAdjacentElement("afterend",element) after ==> inside the element before  ==> outside the element;
+in styles csstext property contains the whole style declaration for that element.
+
+
+var points to global scoping and let,const is a local scoping.=== for absolute equality.!== for absolute inequality(5==="5") 5+"5" 55(concatenation only applies to the + operater) 5-"5"=0
+TYPES OF OBJECT DECLARATION
+
+// USUAL OBJECT DECARATION
+const obj1={
+    name:"psp",
+    age:function(){return 21;},
+    rn:0,
+    set rollno(num)
+    {
+       this.rn=num;
+    },
+};
+obj1.rollno=5;                 // rollno is not a function it is a property setter function
+console.log(obj1.rn);
+
+//CLASS TYPE OBJECT DECLARATION
+const obj2 = new Object();
+obj2.name="psp";
+obj2.age=()=>{return 21};
+console.log(obj2.age);
+
+//OBJECT CONSTRUCTORS  it is normally used in the class type declaration for assiging values.
+function obj3()
+{
+    this.name="psp";
+    this.age=()=>{return 21};        // inside the function this points to the global object
+}
+const ob3 = new obj3();
+console.log(ob3.age)
+--------------------------------------------------------------------------------------------
+Data Types
+---*---
+Numbers ==> tostring,toFixed return the result in string with the rounded value,Math.floor,ceil,round for roundeing values,parseInt,parseFloat("11$")==>11 check till the number.
+
+string ==> length is a property,"'` are used \ is used for escaping the quotes inside the quotes,string are immutable meaning the var s="hi" s[0]="H" never accepts  Hi,accessing the string using the [],charAt(),to access the substring 
+slice(start(includes)end(excludes))  - values accepted
+substring(start,end(excludes)     not accepted treat as zero
+substr(start,length)   first parametre accepts - values
+indexOf(),includes() returns boolean both are same checks the substring in the string.the second parameter number checks from that position return the index number.you can also use startswith,end(s)with
+
+Array ==> can be able to store differnt types of values.push and pop for adding and removing the element in the last same like shift and unshift(adding).length property gives the highest index plus one value.reducing the length can delete element,many function are used in the array.array is also an object we can store properties.some of the functions are
+splice(pos,deletecount,newelement),slice(),isArray(),find(),filter(),map(),sort(),reduce().
+for looping in array we use for..of,regular for loop,forEach(callback function).
+
+
+
+
+
